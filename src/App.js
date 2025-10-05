@@ -177,8 +177,7 @@ const SnapToSellLanding = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
                 <p className="text-gray-600 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
                 
-                <iframe data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
 
                 </div>
               </div>
@@ -485,8 +484,7 @@ const SnapToSellLanding = () => {
             Join 2,847 people on the waitlist. Get early access when we launch in December 2024.
           </p>
           
-          <iframe data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
-<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+<iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
 
             </div>
           </div>
