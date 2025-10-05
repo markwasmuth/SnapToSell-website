@@ -177,18 +177,9 @@ const SnapToSellLanding = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
                 <p className="text-gray-600 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
                 
-                <div className="space-y-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                    disabled
-                  />
-                  <button className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105 flex items-center justify-center">
-                    Get Early Access
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </button>
-                  <p className="text-xs text-gray-500 text-center">2,847 people on waitlist • Launching December 2024</p>
+                <iframe data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
                 </div>
               </div>
             </div>
@@ -494,24 +485,9 @@ const SnapToSellLanding = () => {
             Join 2,847 people on the waitlist. Get early access when we launch in December 2024.
           </p>
           
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
-            <div className="space-y-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                disabled
-              />
-              <select className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent" disabled>
-                <option>I'm a...</option>
-                <option>Seller (I want to list items)</option>
-                <option>Buyer (I want to browse safely)</option>
-                <option>Both</option>
-              </select>
-              <button className="w-full bg-gradient-to-r from-red-600 to-orange-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105">
-                Get Early Access - Free Forever
-              </button>
-              <p className="text-xs text-gray-500 text-center">No credit card required • Cancel anytime</p>
+          <iframe data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="182" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
             </div>
           </div>
         </div>
