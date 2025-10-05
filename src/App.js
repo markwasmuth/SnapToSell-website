@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, Shield, AlertTriangle, CheckCircle, Search, TrendingUp, Users, DollarSign, Zap, Star, ArrowRight, Menu, X } from 'lucide-react';
+import { Camera, Shield, AlertTriangle, CheckCircle, Search, TrendingUp, Users, DollarSign, Star, ArrowRight, Menu, X } from 'lucide-react';
 
 const SnapToSellLanding = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -177,9 +177,7 @@ const SnapToSellLanding = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
                 <p className="text-gray-600 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
                 
-<iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
-
-                </div>
+                <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
               </div>
             </div>
 
@@ -484,9 +482,8 @@ const SnapToSellLanding = () => {
             Join 2,847 people on the waitlist. Get early access when we launch in December 2024.
           </p>
           
-<iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="SnapToSell Waitlist"></iframe>
-
-            </div>
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
+            <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
           </div>
         </div>
       </section>
