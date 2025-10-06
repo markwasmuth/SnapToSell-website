@@ -177,11 +177,11 @@ const SnapToSellLanding = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl shadow-xl p-8 max-w-md mx-auto w-full">
-                <h3 className="text-2xl font-bold text-white mb-4">Join the Waitlist</h3>
-                <p className="text-slate-400 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
+              <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md mx-auto w-full">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
+                <p className="text-gray-600 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
                 
-                <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
+                <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
               </div>
             </div>
 
@@ -493,7 +493,7 @@ const SnapToSellLanding = () => {
           </p>
           
           <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
-            <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
+            <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
           </div>
         </div>
       </section>
