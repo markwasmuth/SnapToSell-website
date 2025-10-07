@@ -172,18 +172,19 @@ const SnapToSellLanding = () => {
                 <p className="text-gray-600 mb-6">Get early access when we launch.</p>
                 
                 {/* TALLY FORM #1 - WAITLIST */}
-                <iframe 
-                  data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
-                  loading="lazy" 
-                  width="100%" 
-                  height="182" 
-                  frameBorder="0" 
-                  marginHeight="0" 
-                  marginWidth="0" 
-                  title="SnapToSell Waitlist"
-                  className="rounded-lg"
-                ></iframe>
-                <script>
+<div className="bg-white rounded-xl shadow-lg p-8 text-center border border-gray-200">
+  <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
+  <p className="text-gray-600 mb-6">Get early access when we launch</p>
+  <a 
+    href="https://tally.so/r/mJ5Rkz" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-xl transform hover:scale-105 transition-all text-lg"
+  >
+    Join Now →
+  </a>
+  <p className="text-sm text-gray-500 mt-4">2,847 people already signed up</p>
+</div>
                   {`var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}`}
                 </script>
               </div>
@@ -443,18 +444,19 @@ const SnapToSellLanding = () => {
             </div>
             
             {/* TALLY FORM #1 (SAME AS HERO) */}
-            <iframe 
-  src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
-  loading="lazy" 
-  width="100%" 
-  height="400" 
-  frameBorder="0" 
-  marginHeight="0" 
-  marginWidth="0" 
-  title="SnapToSell Waitlist"
-  className="rounded-lg"
-  style={{minHeight: '400px'}}
-></iframe>
+<div className="bg-white rounded-xl shadow-lg p-8 text-center border border-gray-200">
+  <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
+  <p className="text-gray-600 mb-6">Get early access when we launch</p>
+  <a 
+    href="https://tally.so/r/mJ5Rkz" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-xl transform hover:scale-105 transition-all text-lg"
+  >
+    Join Now →
+  </a>
+  <p className="text-sm text-gray-500 mt-4">2,847 people already signed up</p>
+</div>
           </div>
           
           <p className="text-slate-500 text-sm mt-6">
