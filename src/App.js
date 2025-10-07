@@ -1,198 +1,205 @@
-import React, { useState, useEffect } from 'react';
-import { Camera, Shield, AlertTriangle, CheckCircle, Search, TrendingUp, Users, DollarSign, Star, ArrowRight, Menu, X } from 'lucide-react';
+import React from 'react';
+import { Shield, Camera, DollarSign, Eye, Heart, Zap, CheckCircle, AlertTriangle, Users, TrendingUp, Globe, Target, X, Star } from 'lucide-react';
 
 const SnapToSellLanding = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [selectedScam, setSelectedScam] = useState(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scamDatabase = [
+  const features = [
     {
-      id: 1,
-      title: "iPhone 15 Pro - Fake Zelle Payment Screenshot",
-      platform: "Facebook Marketplace",
-      reported: 347,
-      avgLoss: 850,
-      description: "Scammer sends fake Zelle confirmation screenshot. Item never ships. Money is gone.",
-      redFlags: ["New seller account", "Refuses to meet in person", "Only accepts Zelle/CashApp", "Price too good to be true"]
+      icon: Shield,
+      title: "AI-Powered Scam Detection",
+      description: "Our advanced AI analyzes listings in real-time, flagging suspicious patterns before you ever see them.",
+      color: "blue"
     },
     {
-      id: 2,
-      title: "Moving Sale - Empty House Scam",
-      platform: "Craigslist",
-      reported: 284,
-      avgLoss: 1200,
-      description: "Scammer lists furniture from rental property they don't own. Asks for deposit, then disappears.",
-      redFlags: ["Wants deposit before viewing", "Can't meet during normal hours", "Vague about exact address"]
+      icon: Camera,
+      title: "Instant Item Identification",
+      description: "Snap a photo and our AI identifies your item, suggests pricing, and creates your listing in seconds.",
+      color: "orange"
     },
     {
-      id: 3,
-      title: "PS5/Xbox - Box Only Scam",
-      platform: "eBay",
-      reported: 219,
-      avgLoss: 450,
-      description: "Listing says 'PS5' but fine print says 'box only'. Buyer pays full price for empty box.",
-      redFlags: ["Stock photos only", "Unusual wording in description", "No returns accepted"]
-    },
-    {
-      id: 4,
-      title: "Rental Deposit - Fake Landlord",
-      platform: "Facebook Marketplace",
-      reported: 156,
-      avgLoss: 2100,
-      description: "Scammer poses as landlord for property they don't own. Collects deposit and first month rent.",
-      redFlags: ["Can't meet in person", "Wants wire transfer", "Pressure to pay immediately", "Won't provide lease"]
-    },
-    {
-      id: 5,
-      title: "Designer Purse - Counterfeit Goods",
-      platform: "OfferUp",
-      reported: 193,
-      avgLoss: 380,
-      description: "High-quality counterfeit designer bags sold as authentic. No returns, seller blocks after sale.",
-      redFlags: ["No authentication papers", "Price significantly below retail", "Seller has many 'authentic' items"]
-    },
-    {
-      id: 6,
-      title: "Puppy Sale - Pet That Doesn't Exist",
-      platform: "Craigslist",
-      reported: 421,
-      avgLoss: 650,
-      description: "Scammer uses stolen photos of puppies. Asks for deposit to 'hold' the puppy. Pet doesn't exist.",
-      redFlags: ["Won't video call", "Unusual payment methods", "Wants shipping for local pickup", "Multiple excuses why you can't visit"]
+      icon: DollarSign,
+      title: "Best Platform Recommendations",
+      description: "Get data-driven suggestions for which marketplace will sell your item fastest at the best price.",
+      color: "green"
     }
-  ];
-
-  const stats = [
-    { value: "2,847", label: "Scams Blocked", icon: Shield },
-    { value: "$1.2M", label: "Protected", icon: DollarSign },
-    { value: "10,284", label: "Safe Sellers", icon: Users },
-    { value: "4.9★", label: "Trust Score", icon: Star }
   ];
 
   const howItWorks = [
     {
       step: "1",
-      title: "AI Photo Verification",
-      description: "Every image checked against our database of 2M+ known scam photos. Duplicate detection catches fake listings instantly.",
-      icon: Camera,
+      icon: Shield,
+      title: "AI Verification",
+      description: "Every listing runs through our proprietary scam detection algorithm checking 50+ fraud indicators.",
       color: "blue"
     },
     {
       step: "2",
-      title: "Seller Background Check",
-      description: "Phone verification, ID verification, and history review. No anonymous scammers allowed on our platform.",
-      icon: Shield,
+      icon: Eye,
+      title: "Community Reporting",
+      description: "Real users report suspicious activity, building the world's largest marketplace fraud database.",
       color: "orange"
     },
     {
       step: "3",
-      title: "Secure Escrow Payment",
-      description: "Money held until item confirmed received. Automatic refund protection. Never lose money to a scammer again.",
       icon: CheckCircle,
+      title: "Manual Review",
+      description: "High-risk listings get reviewed by our safety team before being approved for the platform.",
       color: "green"
     }
   ];
 
+  const scamExamples = [
+    {
+      title: "Fake Payment Confirmation",
+      price: "$850",
+      description: "\"Send the item first, here's my payment screenshot\" - Screenshot was photoshopped",
+      blocked: "2,341 times",
+      severity: "high"
+    },
+    {
+      title: "Too Good To Be True Pricing",
+      price: "$299",
+      description: "iPhone 15 Pro Max listed at 75% below market value - Classic bait listing",
+      blocked: "1,892 times",
+      severity: "high"
+    },
+    {
+      title: "Shipping Scam",
+      price: "$1,200",
+      description: "\"Use this specific shipping company\" - Fake tracking, item never existed",
+      blocked: "1,547 times",
+      severity: "high"
+    },
+    {
+      title: "Overpayment Scam",
+      price: "$650",
+      description: "\"I'll pay extra, just refund the difference\" - Check bounces after you send money",
+      blocked: "987 times",
+      severity: "medium"
+    },
+    {
+      title: "Identity Theft",
+      price: "$0",
+      description: "\"Verify your account with this link\" - Phishing site stealing login credentials",
+      blocked: "3,421 times",
+      severity: "high"
+    },
+    {
+      title: "Bait and Switch",
+      price: "$450",
+      description: "Photos show authentic item, ships counterfeit - AI detected image theft",
+      blocked: "1,203 times",
+      severity: "medium"
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah M.",
+      role: "Frequent Seller",
+      text: "SnapToSell saved me from a $600 iPhone scam. The AI flagged the buyer's payment screenshot as fake before I shipped anything.",
+      avatar: "SM"
+    },
+    {
+      name: "Mike T.",
+      role: "Collector",
+      text: "I've been scammed twice on other platforms. SnapToSell's verification actually works - haven't had a single issue here.",
+      avatar: "MT"
+    },
+    {
+      name: "Jessica L.",
+      role: "Small Business Owner",
+      text: "The instant pricing feature alone is worth it. But knowing every buyer is verified gives me total peace of mind.",
+      avatar: "JL"
+    }
+  ];
+
+  const stats = [
+    { number: "2,847", label: "Scams Blocked", icon: Shield },
+    { number: "$427K", label: "Money Saved", icon: DollarSign },
+    { number: "15K+", label: "Safe Transactions", icon: CheckCircle },
+    { number: "98%", label: "Scam Detection Rate", icon: Target }
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-900">
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-900/95 backdrop-blur-lg shadow-lg border-b border-slate-700' : 'bg-transparent'
-      }`}>
+    <div className="min-h-screen bg-slate-950">
+      {/* Navigation */}
+      <nav className="bg-slate-900/80 backdrop-blur-sm border-b border-slate-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/50">
+              <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg shadow-lg shadow-orange-500/20">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-white">
-                SnapToSell
-              </span>
+              <span className="text-2xl font-bold text-white">SnapToSell</span>
             </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#scams" className="text-slate-300 hover:text-orange-400 transition-colors font-medium">Scam Database</a>
-              <a href="#how-it-works" className="text-slate-300 hover:text-orange-400 transition-colors font-medium">How It Works</a>
-              <a href="#waitlist" className="text-slate-300 hover:text-orange-400 transition-colors font-medium">Join Waitlist</a>
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/50 transition-all transform hover:scale-105">
-                Report a Scam
-              </button>
+            <div className="hidden md:flex space-x-8">
+              <a href="#features" className="text-slate-300 hover:text-white transition-colors">Features</a>
+              <a href="#how-it-works" className="text-slate-300 hover:text-white transition-colors">How It Works</a>
+              <a href="#scam-database" className="text-slate-300 hover:text-white transition-colors">Scam Database</a>
+              <a href="#waitlist" className="text-slate-300 hover:text-white transition-colors">Join Waitlist</a>
             </div>
-
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-slate-800 text-slate-300"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all shadow-lg shadow-orange-500/20">
+              Get Early Access
             </button>
           </div>
         </div>
-
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-slate-900 border-t border-slate-700">
-            <div className="px-4 py-4 space-y-3">
-              <a href="#scams" className="block text-slate-300 hover:text-orange-400 py-2">Scam Database</a>
-              <a href="#how-it-works" className="block text-slate-300 hover:text-orange-400 py-2">How It Works</a>
-              <a href="#waitlist" className="block text-slate-300 hover:text-orange-400 py-2">Join Waitlist</a>
-              <button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-semibold">
-                Report a Scam
-              </button>
-            </div>
-          </div>
-        )}
       </nav>
 
-      <section className="relative pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500 rounded-full filter blur-3xl"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-orange-500/20 border border-orange-500/30 px-4 py-2 rounded-full mb-8 backdrop-blur-sm">
-              <AlertTriangle className="w-5 h-5 text-orange-400" />
-              <span className="text-sm font-semibold text-orange-300">62% of marketplace users have been scammed</span>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950 py-20">
+        <div className="absolute inset-0 bg-grid-slate-800/[0.05] bg-[size:32px_32px]"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-6">
+              <Shield className="w-4 h-4 text-orange-400" />
+              <span className="text-orange-400 text-sm font-medium">Beta Launching Soon</span>
             </div>
-
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
-              Never Get{' '}
-              <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent">
-                Scammed
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Never Get Scammed on
+              <br />
+              <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                Marketplace Again
               </span>
-              {' '}on Marketplace Again
             </h1>
-
-            <p className="text-xl sm:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              SnapToSell verifies every photo, every seller, every listing. AI-powered scam detection with zero tolerance for fraud. The marketplace where scammers can't hide.
+            <p className="text-xl sm:text-2xl text-slate-400 max-w-3xl mx-auto mb-12">
+              AI-powered fraud detection meets instant item pricing. Sell safely, sell smarter, sell faster.
             </p>
-
+            
+            {/* Waitlist Form #1 */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md mx-auto w-full">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Join the Waitlist</h3>
-                <p className="text-gray-600 mb-6">Get early access when we launch. Be among the first protected sellers.</p>
+                <p className="text-gray-600 mb-6">Get early access when we launch.</p>
                 
-                <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
+                {/* TALLY FORM #1 - WAITLIST */}
+                <iframe 
+                  data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
+                  loading="lazy" 
+                  width="100%" 
+                  height="182" 
+                  frameBorder="0" 
+                  marginHeight="0" 
+                  marginWidth="0" 
+                  title="SnapToSell Waitlist"
+                  className="rounded-lg"
+                ></iframe>
+                <script>
+                  {`var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}`}
+                </script>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => {
                 const IconComponent = stat.icon;
                 return (
-                  <div key={index} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-xl">
-                    <IconComponent className="w-8 h-8 text-orange-400 mb-2 mx-auto" />
-                    <div className="text-3xl font-bold text-white">{stat.value}</div>
-                    <div className="text-sm text-slate-400 mt-1">{stat.label}</div>
+                  <div key={index} className="text-center">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-500/10 rounded-full mb-3">
+                      <IconComponent className="w-6 h-6 text-orange-400" />
+                    </div>
+                    <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
+                    <div className="text-slate-400 text-sm">{stat.label}</div>
                   </div>
                 );
               })}
@@ -201,47 +208,81 @@ const SnapToSellLanding = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-950 border-y border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                "I Lost $600 to a Fake iPhone Seller"
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto mb-8"></div>
-            </div>
-
-            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 mb-8 backdrop-blur-sm">
-              <p className="text-xl text-slate-300 leading-relaxed mb-6">
-                "The photos looked real. The seller had 5-star reviews. I sent the money through Zelle like they asked. The iPhone never came. When I reported it to Facebook, they said there was nothing they could do. I lost $600."
-              </p>
-              <p className="text-lg text-slate-400 italic">— Sarah M., verified victim</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6 backdrop-blur-sm">
-                <div className="text-4xl font-bold text-orange-400 mb-2">147,293</div>
-                <div className="text-slate-300">Marketplace scams reported in 2024</div>
-              </div>
-              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6 backdrop-blur-sm">
-                <div className="text-4xl font-bold text-orange-400 mb-2">$2.7B</div>
-                <div className="text-slate-300">Lost to marketplace fraud annually</div>
-              </div>
-              <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6 backdrop-blur-sm">
-                <div className="text-4xl font-bold text-orange-400 mb-2">62%</div>
-                <div className="text-slate-300">Of users have been scammed or know someone who has</div>
+      {/* The Problem */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-red-500/10 to-red-600/10 border border-red-500/20 rounded-3xl p-8 sm:p-12 backdrop-blur-sm">
+            <div className="flex items-start space-x-4 mb-6">
+              <AlertTriangle className="w-8 h-8 text-red-400 flex-shrink-0 mt-1" />
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">The $600 iPhone That Never Arrived</h2>
+                <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                  You found the perfect deal on Facebook Marketplace. iPhone 15 Pro, "like new," $600. The seller seemed legit - good profile, quick responses. You sent the money. They said they shipped it. Then... silence.
+                </p>
+                <p className="text-slate-300 text-lg leading-relaxed mb-4">
+                  The tracking number was fake. The profile disappeared. Your $600? Gone. And Facebook? They said it's "not their responsibility."
+                </p>
+                <p className="text-orange-400 text-xl font-semibold">
+                  This happens 2,000+ times every single day on popular marketplaces.
+                </p>
               </div>
             </div>
-
-            <div className="text-center mt-12">
-              <p className="text-2xl font-bold text-white mb-4">
-                This Won't Happen on SnapToSell. Here's Why ▼
-              </p>
+            <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800">
+              <h3 className="text-xl font-bold text-white mb-3">Other Platforms Don't Care</h3>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-start">
+                  <X className="w-5 h-5 text-red-400 mr-3 flex-shrink-0 mt-0.5" />
+                  <span>Facebook Marketplace: No fraud protection, no buyer verification, no seller screening</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="w-5 h-5 text-red-400 mr-3 flex-shrink-0 mt-0.5" />
+                  <span>OfferUp: 10%+ listing fees, minimal scam prevention, slow dispute resolution</span>
+                </li>
+                <li className="flex items-start">
+                  <X className="w-5 h-5 text-red-400 mr-3 flex-shrink-0 mt-0.5" />
+                  <span>Craigslist: Zero protection, anonymous scammers, no recourse when things go wrong</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Features */}
+      <section id="features" className="py-20 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Three Revolutionary Features
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              We're not just another marketplace. We're the anti-scam marketplace.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              const colorClasses = {
+                blue: 'from-blue-500 to-blue-600 shadow-blue-500/20',
+                orange: 'from-orange-500 to-orange-600 shadow-orange-500/20',
+                green: 'from-emerald-500 to-emerald-600 shadow-emerald-500/20'
+              };
+              return (
+                <div key={index} className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 hover:border-orange-500/30 transition-all backdrop-blur-sm">
+                  <div className={`w-14 h-14 bg-gradient-to-br ${colorClasses[feature.color]} rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                    <IconComponent className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
       <section id="how-it-works" className="py-20 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -293,188 +334,48 @@ const SnapToSellLanding = () => {
         </div>
       </section>
 
-      <section id="scams" className="py-20 bg-slate-950 border-y border-slate-800">
+      {/* Scam Database */}
+      <section id="scam-database" className="py-20 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Crowdsourced Scam Database
+              Real Scams We've Blocked
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Over 10,000 scams reported and verified by our community. Search before you buy.
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto mb-12">
-            <div className="relative">
-              <Search className="absolute left-4 top-4 w-6 h-6 text-slate-500" />
-              <input
-                type="text"
-                placeholder='Search scams: "iPhone 15", "rental deposit", "puppy"...'
-                className="w-full pl-14 pr-4 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-xl text-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-orange-500 focus:border-transparent backdrop-blur-sm"
-              />
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <TrendingUp className="w-6 h-6 text-orange-400 mr-2" />
-              Top Scams This Week
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {scamDatabase.slice(0, 6).map((scam) => (
-                <div 
-                  key={scam.id}
-                  onClick={() => setSelectedScam(scam)}
-                  className="bg-slate-800/50 border border-slate-700 rounded-xl shadow-lg p-6 hover:shadow-2xl hover:shadow-orange-500/10 transition-all cursor-pointer hover:border-orange-500/50 backdrop-blur-sm"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h4 className="font-bold text-white mb-2 line-clamp-2">{scam.title}</h4>
-                      <span className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-500/30 text-orange-300 rounded-full text-sm font-medium">
-                        {scam.platform}
-                      </span>
-                    </div>
-                    <AlertTriangle className="w-6 h-6 text-orange-400 flex-shrink-0 ml-2" />
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <div className="text-sm text-slate-500">Reported</div>
-                      <div className="text-lg font-bold text-white">{scam.reported}x</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-slate-500">Avg Loss</div>
-                      <div className="text-lg font-bold text-orange-400">${scam.avgLoss.toLocaleString()}</div>
-                    </div>
-                  </div>
-
-                  <button className="w-full bg-slate-700/50 border border-slate-600 text-slate-300 py-2 rounded-lg hover:bg-slate-700 transition-colors font-medium">
-                    View Details →
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-8 text-white text-center shadow-xl shadow-orange-500/20">
-            <h3 className="text-3xl font-bold mb-4">Been Scammed? Help Others.</h3>
-            <p className="text-xl text-orange-100 mb-6">
-              Report scams you've encountered. Your report could save someone else from losing money.
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-8">
+              Our AI learns from every attempted scam to protect you better
             </p>
             
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl transition-all transform hover:scale-105">
-              Report a Scam You Encountered
-            </button>
-            
-            <p className="text-sm text-orange-100 mt-4">Anonymous reporting available • Takes 2 minutes</p>
-          </div>
-        </div>
-      </section>
-
-      {selectedScam && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setSelectedScam(null)}>
-          <div className="bg-slate-800 border border-slate-700 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-start justify-between mb-6">
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-white mb-2">{selectedScam.title}</h3>
-                <span className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-500/30 text-orange-300 rounded-full text-sm font-medium">
-                  {selectedScam.platform}
-                </span>
-              </div>
-              <button onClick={() => setSelectedScam(null)} className="text-slate-400 hover:text-white">
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-orange-500/10 border border-orange-500/30 rounded-xl">
-              <div>
-                <div className="text-sm text-slate-400">Times Reported</div>
-                <div className="text-2xl font-bold text-white">{selectedScam.reported}</div>
-              </div>
-              <div>
-                <div className="text-sm text-slate-400">Average Loss</div>
-                <div className="text-2xl font-bold text-orange-400">${selectedScam.avgLoss.toLocaleString()}</div>
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <h4 className="text-lg font-bold text-white mb-2">How It Works</h4>
-              <p className="text-slate-300 leading-relaxed">{selectedScam.description}</p>
-            </div>
-
-            <div className="mb-6">
-              <h4 className="text-lg font-bold text-white mb-3 flex items-center">
-                <AlertTriangle className="w-5 h-5 text-orange-400 mr-2" />
-                Red Flags to Watch For
-              </h4>
-              <ul className="space-y-2">
-                {selectedScam.redFlags.map((flag, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                    <span className="text-slate-300">{flag}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-emerald-500/10 border-2 border-emerald-500/30 rounded-xl p-4">
-              <div className="flex items-start">
-                <Shield className="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-emerald-300 mb-1">Protected on SnapToSell</h4>
-                  <p className="text-sm text-emerald-200">Our AI would automatically flag and block this type of scam before it reaches you.</p>
-                </div>
+            {/* Report Scam Form */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md mx-auto mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Report a Scam</h3>
+              <p className="text-gray-600 mb-6">Help protect the community by reporting marketplace fraud.</p>
+              
+              {/* TALLY FORM #2 - REPORT SCAM (Placeholder - needs to be created) */}
+              <div className="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                <p className="text-gray-600 text-sm">Report Scam Form - Connect your Tally form here</p>
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      <section className="py-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Real People, Real Protection
-            </h2>
-            <p className="text-xl text-slate-400">Stories from sellers who avoided scams with SnapToSell</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "The AI flagged a listing as suspicious. Turns out it was a known scammer with 15 different aliases. Facebook had done nothing about it.",
-                author: "Mike R.",
-                role: "Vintage Collector",
-                saved: "$1,200"
-              },
-              {
-                quote: "I was about to send money for a 'rental deposit' when SnapToSell's verification caught it. The address didn't exist. Saved me $2,100.",
-                author: "Jennifer T.",
-                role: "First-time Renter",
-                saved: "$2,100"
-              },
-              {
-                quote: "After being scammed twice on Facebook Marketplace, I only use SnapToSell now. The escrow payment gives me peace of mind.",
-                author: "David K.",
-                role: "Electronics Reseller",
-                saved: "$850"
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 shadow-xl backdrop-blur-sm">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-orange-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-slate-300 text-lg mb-6 italic">"{testimonial.quote}"</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-bold text-white">{testimonial.author}</div>
-                    <div className="text-sm text-slate-400">{testimonial.role}</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {scamExamples.map((scam, index) => (
+              <div key={index} className="bg-slate-900/50 border border-slate-800 rounded-xl p-6 hover:border-red-500/30 transition-all backdrop-blur-sm">
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    scam.severity === 'high' 
+                      ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
+                      : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                  }`}>
+                    {scam.severity === 'high' ? 'High Risk' : 'Medium Risk'}
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm text-slate-400">Saved</div>
-                    <div className="text-xl font-bold text-emerald-400">{testimonial.saved}</div>
+                  <span className="text-orange-400 font-bold text-lg">{scam.price}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{scam.title}</h3>
+                <p className="text-slate-400 text-sm mb-4 leading-relaxed">{scam.description}</p>
+                <div className="flex items-center justify-between pt-4 border-t border-slate-800">
+                  <div className="flex items-center text-emerald-400">
+                    <Shield className="w-4 h-4 mr-2" />
+                    <span className="text-sm font-medium">Blocked {scam.blocked}</span>
                   </div>
                 </div>
               </div>
@@ -483,63 +384,131 @@ const SnapToSellLanding = () => {
         </div>
       </section>
 
-      <section id="waitlist" className="py-20 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Stop Losing Money to Scammers
-          </h2>
-          <p className="text-xl text-orange-100 mb-10">
-            Join 2,847 people on the waitlist. Get early access when we launch in December 2024.
-          </p>
-          
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto">
-            <iframe src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameBorder="0" marginHeight="0" marginWidth="0" title="SnapToSell Waitlist"></iframe>
+      {/* Social Proof */}
+      <section className="py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Real People, Real Protection
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              Join thousands who've stopped worrying about marketplace scams
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">{testimonial.name}</div>
+                    <div className="text-sm text-slate-400">{testimonial.role}</div>
+                  </div>
+                </div>
+                <p className="text-slate-300 leading-relaxed italic">"{testimonial.text}"</p>
+                <div className="flex mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <footer className="bg-slate-950 border-t border-slate-800 text-slate-400 py-12">
+      {/* Final CTA */}
+      <section id="waitlist" className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Ready to Sell Without Fear?
+          </h2>
+          <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            Join the waitlist now. Be among the first to experience marketplace selling the way it should be: safe, simple, and scam-free.
+          </p>
+          
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg mx-auto">
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="bg-emerald-50 rounded-lg p-4 border border-emerald-200">
+                <div className="text-3xl font-bold text-emerald-600 mb-1">2,847</div>
+                <div className="text-sm text-emerald-700">Scams Blocked</div>
+              </div>
+              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                <div className="text-3xl font-bold text-blue-600 mb-1">$427K</div>
+                <div className="text-sm text-blue-700">Money Saved</div>
+              </div>
+            </div>
+            
+            {/* TALLY FORM #1 (SAME AS HERO) */}
+            <iframe 
+              data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height="182" 
+              frameBorder="0" 
+              marginHeight="0" 
+              marginWidth="0" 
+              title="SnapToSell Waitlist"
+              className="rounded-lg"
+            ></iframe>
+          </div>
+          
+          <p className="text-slate-500 text-sm mt-6">
+            <Shield className="w-4 h-4 inline mr-1" />
+            Your information is protected. We'll never sell your data or spam you.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-950 border-t border-slate-900 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/50">
-                  <Shield className="w-6 h-6 text-white" />
+                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-2 rounded-lg">
+                  <Shield className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold text-white">SnapToSell</span>
               </div>
-              <p className="text-sm">The marketplace where scammers can't hide.</p>
+              <p className="text-slate-400 text-sm">
+                The first marketplace platform that actually protects you from scams.
+              </p>
             </div>
 
             <div>
               <h4 className="text-white font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#scams" className="hover:text-orange-400 transition-colors">Scam Database</a></li>
-                <li><a href="#how-it-works" className="hover:text-orange-400 transition-colors">How It Works</a></li>
-                <li><a href="#waitlist" className="hover:text-orange-400 transition-colors">Join Waitlist</a></li>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="#scam-database" className="hover:text-white transition-colors">Scam Database</a></li>
+                <li><a href="#waitlist" className="hover:text-white transition-colors">Join Waitlist</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-white font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Scam Prevention Guide</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Safety Tips</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Report a Scam</a></li>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-white transition-colors">Scam Prevention Guide</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Safety Tips</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Report a Scam</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Terms</a></li>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-slate-800 pt-8 text-center text-sm">
+          <div className="border-t border-slate-900 pt-8 text-center text-sm text-slate-500">
             <p>&copy; 2024 SnapToSell. All rights reserved. Fighting marketplace fraud, one listing at a time.</p>
           </div>
         </div>
@@ -549,3 +518,4 @@ const SnapToSellLanding = () => {
 };
 
 export default SnapToSellLanding;
+fixed - restored correct
