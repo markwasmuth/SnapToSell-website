@@ -1,4 +1,4 @@
-import React from 'react';
+// Force Vercel Rebuild - October 7, 2025import React from 'react';
 import { Shield, Camera, DollarSign, Eye, Heart, Zap, CheckCircle, AlertTriangle, Users, TrendingUp, Globe, Target, X, Star } from 'lucide-react';
 
 const SnapToSellLanding = () => {
