@@ -9,9 +9,10 @@
     "react-dom": "^18.2.0"
   },
 "scripts": {
-  "dev": "vite",
-  "build": "npx vite build",
-  "preview": "vite preview"
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
 },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
