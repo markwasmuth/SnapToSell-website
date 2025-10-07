@@ -518,4 +518,3 @@ const SnapToSellLanding = () => {
 };
 
 export default SnapToSellLanding;
-fixed - restored correct
