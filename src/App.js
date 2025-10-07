@@ -444,16 +444,17 @@ const SnapToSellLanding = () => {
             
             {/* TALLY FORM #1 (SAME AS HERO) */}
             <iframe 
-              data-tally-src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
-              loading="lazy" 
-              width="100%" 
-              height="182" 
-              frameBorder="0" 
-              marginHeight="0" 
-              marginWidth="0" 
-              title="SnapToSell Waitlist"
-              className="rounded-lg"
-            ></iframe>
+  src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&dynamicHeight=1" 
+  loading="lazy" 
+  width="100%" 
+  height="400" 
+  frameBorder="0" 
+  marginHeight="0" 
+  marginWidth="0" 
+  title="SnapToSell Waitlist"
+  className="rounded-lg"
+  style={{minHeight: '400px'}}
+></iframe>
           </div>
           
           <p className="text-slate-500 text-sm mt-6">
