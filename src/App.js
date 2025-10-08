@@ -1,6 +1,8 @@
 import React from 'react';
 import { Shield, Camera, DollarSign, Eye, Heart, Zap, CheckCircle, AlertTriangle, Users, TrendingUp, Globe, Target, X, Star } from 'lucide-react';
-
+import React from 'react';
+import { Shield, Camera, DollarSign, Eye, Heart, Zap, CheckCircle, AlertTriangle, Users, TrendingUp, Globe, Target, X, Star } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';  // ADD THIS LINE
 const SnapToSellLanding = () => {
   const features = [
     {
