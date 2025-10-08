@@ -515,6 +515,7 @@ const SnapToSellLanding = () => {
           </div>
         </div>
       </footer>
+     <Analytics />
     </div>
   );
 };
