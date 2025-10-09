@@ -186,7 +186,17 @@ const SnapToSellLanding = () => {
   </a>
   <p className="text-sm text-gray-500 mt-4">2,847 people already signed up</p>
 </div>
-                  {`var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}`}
+                  <iframe 
+  src="https://tally.so/embed/mJ5Rkz?alignLeft=1&hideTitle=1&transparentBackground=1" 
+  loading="lazy" 
+  width="100%" 
+  height="400" 
+  frameBorder="0" 
+  marginHeight="0" 
+  marginWidth="0" 
+  title="SnapToSell Waitlist"
+  style={{border: '0', minHeight: '400px'}}
+></iframe>
                        </div>
             </div>
 
